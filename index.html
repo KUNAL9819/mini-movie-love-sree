@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Mini Movie — A Love Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Cursor sparkle layer -->
+  <canvas id="sparkleCanvas"></canvas>
+
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Scene dots nav -->
+  <nav class="scene-nav" id="sceneNav">
+    <span class="dot" data-scene="scene-intro"></span>
+    <span class="dot" data-scene="scene-1"></span>
+    <span class="dot" data-scene="scene-2"></span>
+    <span class="dot" data-scene="scene-3"></span>
+    <span class="dot" data-scene="scene-4"></span>
+    <span class="dot" data-scene="scene-finale"></span>
+  </nav>
+
+  <!-- Music Button -->
+  <button class="music-btn" id="musicBtn" title="Play Music">
+    <span class="music-icon-paused" id="musicIcon">♪</span>
+  </button>
+
+  <!-- Hearts Container -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- Background Audio -->
+  <audio id="bgMusic" loop>
+    <source src="./assets/music/song.mpeg" type="audio/mpeg" />
+  </audio>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE: INTRO                               -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-intro" id="scene-intro">
+    <div class="film-grain"></div>
+    <div class="letterbox letterbox-top"></div>
+    <div class="letterbox letterbox-bottom"></div>
+    <div class="star-field" id="starField"></div>
+    <div class="vignette"></div>
+
+    <div class="scene-content intro-layout">
+      <div class="film-strip-bar"></div>
+      <div class="intro-meta">
+        <span class="intro-label anim-fade-up" style="--delay:0.2s">Now Playing</span>
+        <span class="intro-sep">·</span>
+        <span class="intro-label anim-fade-up" style="--delay:0.4s">2024</span>
+      </div>
+      <div class="intro-badge anim-fade-up" style="--delay:0.6s">A Mini Movie Production</div>
+      <h1 class="intro-title anim-chars" data-text="A Mini Movie">A Mini Movie</h1>
+      <div class="title-ornament anim-expand" style="--delay:1.2s">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond">◆</span>
+        <span class="ornament-line"></span>
+      </div>
+      <h2 class="intro-subtitle anim-fade-up" style="--delay:1.4s">A Love Story</h2>
+      <div class="scroll-hint anim-fade-up" style="--delay:2s">
+        <span>Scroll to begin</span>
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      </div>
+      <div class="film-strip-bar"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE 1: THE BEGINNING                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-1" id="scene-1">
+    <div class="film-grain"></div>
+    <div class="ken-burns-wrap">
+      <div class="ken-burns" style="background-image: url('./assets/images/photo1.jpg')"></div>
+    </div>
+    <div class="color-overlay"></div>
+    <div class="vignette vignette-heavy"></div>
+    <div class="light-leak light-leak-left"></div>
+
+    <div class="scene-content split-layout">
+      <div class="split-text">
+        <div class="scene-chip anim-chip" style="--delay:0s">Scene 01</div>
+        <h2 class="scene-title anim-reveal" style="--delay:0.2s">The Beginning</h2>
+        <div class="scene-rule anim-expand" style="--delay:0.6s"></div>
+        <p class="scene-text anim-fade-up" style="--delay:0.8s">
+          Every great love story starts<br/>
+          with a single moment —<br/>
+          <em>a smile, a glance,</em><br/>
+          a heartbeat that changes<br/>
+          everything forever.
+        </p>
+      </div>
+      <div class="split-photo anim-photo-reveal" style="--delay:0.3s">
+        <div class="photo-frame">
+          <img src="./assets/images/Image1.jpeg" alt="Our beginning" onerror="this.parentElement.classList.add('photo-empty')" />
+          <div class="photo-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE 2: THE JOURNEY                       -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-2" id="scene-2">
+    <div class="film-grain"></div>
+    <div class="ken-burns-wrap">
+      <div class="ken-burns ken-burns-reverse" style="background-image: url('./assets/images/photo2.jpg')"></div>
+    </div>
+    <div class="color-overlay color-blue"></div>
+    <div class="vignette vignette-heavy"></div>
+    <div class="light-leak light-leak-right"></div>
+
+    <div class="scene-content split-layout split-reverse">
+      <div class="split-photo anim-photo-reveal" style="--delay:0.3s">
+        <div class="photo-frame photo-frame-tilt">
+          <img src="./assets/images/Image2.jpeg" alt="Our journey" onerror="this.parentElement.classList.add('photo-empty')" />
+          <div class="photo-glow"></div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="scene-chip anim-chip" style="--delay:0s">Scene 02</div>
+        <h2 class="scene-title anim-reveal" style="--delay:0.2s">The Journey</h2>
+        <div class="scene-rule anim-expand" style="--delay:0.6s"></div>
+        <p class="scene-text anim-fade-up" style="--delay:0.8s">
+          Through every sunrise<br/>
+          and every storm,<br/>
+          <em>through laughter and tears —</em><br/>
+          you were always there,<br/>
+          making every moment<br/>
+          more beautiful.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE 3: THE MOMENTS                       -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-3" id="scene-3">
+    <div class="film-grain"></div>
+    <div class="vignette"></div>
+    <div class="aurora-bg"></div>
+    <!-- Polaroid grid -->
+    <div class="polaroid-grid">
+      <div class="polaroid p1"><div class="pol-img"><img src="./assets/images/photo1.jpg" onerror="this.parentElement.style.background='rgba(200,140,120,0.15)'" /></div><div class="pol-caption">Us</div></div>
+      <div class="polaroid p2"><div class="pol-img"><img src="./assets/images/photo2.jpg" onerror="this.parentElement.style.background='rgba(200,140,120,0.15)'" /></div><div class="pol-caption">Always</div></div>
+      <div class="polaroid p3"><div class="pol-img" style="background: rgba(200,140,120,0.1)"></div><div class="pol-caption">Forever</div></div>
+    </div>
+
+    <div class="scene-content center-layout">
+      <div class="scene-chip anim-chip" style="--delay:0s">Scene 03</div>
+      <h2 class="scene-title anim-reveal" style="--delay:0.2s">The Moments</h2>
+      <div class="scene-rule anim-expand" style="--delay:0.6s"></div>
+      <p class="scene-text anim-fade-up" style="--delay:0.8s">
+        The small things.<br/>
+        <em>A warm hug. A gentle word.</em><br/>
+        A shared silence.<br/>
+        These are the threads that weave<br/>
+        a love story worth telling.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE 4: THE PROMISE                       -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-4" id="scene-4">
+    <div class="film-grain"></div>
+    <div class="vignette"></div>
+    <div class="fireflies-container" id="fireflies"></div>
+
+    <div class="scene-content center-layout">
+      <div class="scene-chip anim-chip" style="--delay:0s">Scene 04</div>
+      <h2 class="scene-title anim-reveal" style="--delay:0.2s">The Promise</h2>
+      <div class="scene-rule anim-expand" style="--delay:0.6s"></div>
+      <div class="quote-block anim-fade-up" style="--delay:0.8s">
+        <span class="quote-mark open">"</span>
+        <p class="scene-text">
+          In a world full of ordinary days,<br/>
+          you made mine extraordinary.<br/>
+          <em>Every day with you</em><br/>
+          is a chapter I never want to end.
+        </p>
+        <span class="quote-mark close">"</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCENE: FINALE                              -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="scene scene-finale" id="scene-finale">
+    <div class="film-grain"></div>
+    <div class="vignette"></div>
+    <div class="finale-rings"></div>
+    <canvas class="finale-particles" id="particleCanvas"></canvas>
+
+    <div class="scene-content finale-content">
+      <div class="finale-dedicated anim-fade-up" style="--delay:0s">✦ Dedicated to ✦</div>
+      <div class="finale-name" id="finaleName">SREE</div>
+      <div class="finale-heart-wrap anim-fade-up" style="--delay:0.8s">
+        <span class="finale-heart-bg">❤</span>
+        <span class="finale-heart">❤</span>
+      </div>
+      <p class="finale-message anim-fade-up" style="--delay:1s">
+        You are my favourite story,<br/>
+        my most beautiful chapter,<br/>
+        <em>my forever and always.</em>
+      </p>
+      <div class="finale-signature anim-fade-up" style="--delay:1.3s">— With all my love</div>
+      <div class="finale-end anim-fade-up" style="--delay:1.8s">
+        <span class="fin-line"></span>
+        <span>THE END</span>
+        <span class="fin-line"></span>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+</html>
